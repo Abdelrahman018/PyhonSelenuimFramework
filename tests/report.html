@@ -243,7 +243,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 31-Jan-2023 at 19:58:47 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
+    <p>Report generated on 05-Jul-2023 at 16:17:13 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -251,7 +251,7 @@ function filter_table(elem) {
         <td>C:\AI2U\JDK</td></tr>
       <tr>
         <td>Packages</td>
-        <td>{"pluggy": "1.0.0", "pytest": "7.2.1"}</td></tr>
+        <td>{"pluggy": "1.0.0", "pytest": "7.3.0"}</td></tr>
       <tr>
         <td>Platform</td>
         <td>Windows-10-10.0.19045-SP0</td></tr>
@@ -262,8 +262,8 @@ function filter_table(elem) {
         <td>Python</td>
         <td>3.11.1</td></tr></table>
     <h2>Summary</h2>
-    <p>3 tests ran in 43.04 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>1 tests ran in 39.69 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">3 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -274,38 +274,39 @@ function filter_table(elem) {
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
+      <tbody class="skipped results-table-row">
         <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_e2e.py::TestOne::test_e2e</td>
-          <td class="col-duration">7.60</td>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">test_e2e.py::TestOne::test_booking::setup</td>
+          <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div><div><img src="test_e2e.py_TestOne_test_e2e.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
-            <div class="log">self = &lt;tests.test_e2e.TestOne object at 0x0000020490749090&gt;<br/><br/>    def test_e2e(self):<br/>        # using page object we will optimize the code<br/>        log = self.getLogger()<br/>        homepage = HomePage(self.driver) # pass local driver here to the homepage class<br/>        checkoutpage = homepage.shopItems() # here we clicked on shop button in home page -&gt; we made optimization here<br/>        log.info(&quot;Get all card titles&quot;)<br/>        # below are belong to CheckoutPage class<br/>        #checkoutpage = CheckoutPage(self.driver)<br/>        cards = checkoutpage.getCardTitles()<br/>        i = -1<br/>        for card in cards:<br/>            i = i + 1<br/>            cardText = card.text<br/>            log.info(cardText)<br/>            if cardText == &quot;Blackberry&quot;:<br/>                checkoutpage.getCardFooter().click() # click on add<br/>        checkoutpage.CheckoutItems_1().click() # click on checkout_1<br/>        confirmPage = checkoutpage.CheckoutItems_2() # click on checkout_2<br/>    <br/>        # below are belong to ConfirmationPage class<br/>        #confirmPage = ConfirmPage(self.driver)<br/>        log.info(&quot;Entering country name as ind&quot;)<br/>        confirmPage.getCountryName().send_keys(&quot;ind&quot;)<br/>        self.verifyLinkPresence(&quot;India&quot;) # call explicit wait from baseClass<br/>        confirmPage.SelCountryName().click()<br/>        confirmPage.CheckBox().click()<br/>        confirmPage.Submit().click()<br/>        Text = confirmPage.GetSucMessage().text<br/>        log.info(&quot;Text recieved from apllication is&quot; + Text )<br/>&gt;       assert &quot;Success! Thank you! fwfefwefw&quot; in Text<br/><span class="error">E       AssertionError: assert &#x27;Success! Thank you! fwfefwefw&#x27; in &#x27;×\nSuccess! Thank you! Your order will be delivered in next few weeks :-).&#x27;</span><br/><br/>test_e2e.py:52: AssertionError<br/> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_e2e:test_e2e.py:28 Get all card titles
-[32mINFO    [0m test_e2e:test_e2e.py:36 iphone X
-[32mINFO    [0m test_e2e:test_e2e.py:36 Samsung Note 8
-[32mINFO    [0m test_e2e:test_e2e.py:36 Nokia Edge
-[32mINFO    [0m test_e2e:test_e2e.py:36 Blackberry
-[32mINFO    [0m test_e2e:test_e2e.py:44 Entering country name as ind
-[32mINFO    [0m test_e2e:test_e2e.py:51 Text recieved from apllication is×
-Success! Thank you! Your order will be delivered in next few weeks :-).<br/></div></td></tr></tbody>
+            <div class="log">(&#x27;D:\\Abdelrahman\\Naeem\\Automation\\PythonFramework\\tests\\test_e2e.py&#x27;, 16, &#x27;Skipped: skipping this test for now&#x27;)<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">test_e2e.py::TestOne::test_pos_calender_booking::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">(&#x27;D:\\Abdelrahman\\Naeem\\Automation\\PythonFramework\\tests\\test_e2e.py&#x27;, 40, &#x27;Skipped: skipping this another test for now&#x27;)<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">test_e2e.py::TestOne::test_add_employee[getData0]::setup</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">(&#x27;D:\\Abdelrahman\\Naeem\\Automation\\PythonFramework\\tests\\test_e2e.py&#x27;, 51, &#x27;Skipped: skipping this another test for now&#x27;)<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test_HomePage.py::TestHomePage::test_formSubmission[getData0]</td>
-          <td class="col-duration">1.38</td>
+          <td class="col-name">test_e2e.py::TestOne::test_add_department[getData0]</td>
+          <td class="col-duration">18.95</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_formSubmission:test_HomePage.py:18 Firstname is Abdo<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_HomePage.py::TestHomePage::test_formSubmission[getData1]</td>
-          <td class="col-duration">1.72</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_formSubmission:test_HomePage.py:18 Firstname is Magy<br/></div></td></tr></tbody></table></body></html>
+            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
